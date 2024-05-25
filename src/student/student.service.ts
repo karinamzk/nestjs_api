@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { BadRequestException, Injectable } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 import { CreateStudentDto } from './dto/create-student.dto';
 import { UpdateStudentDto } from './dto/update-student.dto'
@@ -9,15 +9,29 @@ export class StudentService {
 
   async create(createStudentDto: CreateStudentDto) {
     const { name, courseIds } = createStudentDto;
-    return this.prismaService.student.create({
-      data: {
-        name,
-        courses: {
-          connect: courseIds.map((id) => ({ id })),
-        },
-      },
-    });
-  }
+    console.log('Creating student with:', createStudentDto);
+
+    if (!Array.isArray(courseIds)) {
+      throw new BadRequestException('courseIds must be an array');
+    }
+
+    try {
+      const student = await this.prismaService.student.create({
+        data: {
+          name,
+          courses: {
+            connect: courseIds.map((id) => ({ id })),
+          },
+    }});
+
+        console.log('Student created successfully:', student);
+        return student;
+      } catch (error) {
+        console.error('Error creating student:', error);
+        throw new Error('Failed to create student');
+      }
+    }
+  
 
   async findAll() {
     return this.prismaService.student.findMany({
