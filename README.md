@@ -40,7 +40,7 @@ cd nestjs_api
         <ul>
             <li>Abra o Insomnia.</li>
             <li>Vá em <code>Import/Export</code> &gt; <code>Import Data</code> &gt; <code>From File</code>.</li>
-            <li>Selecione o arquivo <code>insomnia_project.json</code> disponível <a href="./docs/insomnia_project">aqui</a>.</li>
+            <li>Selecione o arquivo <code>insomnia_project</code> disponível <a href="./docs/Insomnia_project">aqui</a>.</li>
         </ul>
     </li>
     <li><strong>Execute os Testes</strong>:
