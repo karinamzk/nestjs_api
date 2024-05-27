@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>README - NestJS API com Prisma</title>
+</head>
 <body>
 <h1>NestJS API com Prisma</h1>
 
@@ -15,7 +20,12 @@ cd nestjs_api
     <li><strong>Instale as Dependências</strong>:
         <pre><code>npm install</code></pre>
     </li>
-    <li><strong>Configure o Banco de Dados</strong>: Atualize o arquivo <code>.env</code> com suas configurações de banco de dados.</li>
+    <li><strong>Configure o Banco de Dados</strong>:
+        <p>Crie um arquivo <code>.env</code> na raiz do projeto com as seguintes variáveis de ambiente:</p>
+        <pre><code>DATABASE_URL="mysql://usuario:senha@localhost:3306/meubanco"
+        </code></pre>
+        <p>Substitua <code>usuario</code>, <code>senha</code>, <code>localhost</code>, <code>3306</code> e <code>meubanco</code> com as suas configurações de banco de dados.</p>
+    </li>
     <li><strong>Execute as Migrações</strong>:
         <pre><code>npx prisma migrate dev --name init</code></pre>
     </li>
