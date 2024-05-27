@@ -15,13 +15,20 @@ cd nestjs_api
     <li><strong>Instale as Dependências</strong>:
         <pre><code>npm install</code></pre>
     </li>
-    <li><strong>Configure o Banco de Dados</strong>: Atualize o arquivo <code>.env</code> com suas configurações de banco de dados.</li>
-    <li><strong>Execute as Migrações</strong>:
-        <pre><code>npx prisma migrate dev --name init</code></pre>
-    </li>
-    <li><strong>Inicie a Aplicação</strong>:
-        <pre><code>npm run start</code></pre>
-    </li>
+    <h3>Configure o Banco de Dados:</h3>
+    <p>Crie um arquivo <code>.env</code> na raiz do projeto com as seguintes variáveis de ambiente:</p>
+    <pre><code>DATABASE_URL="mysql://usuario:senha@localhost:3306/meubanco"
+    </code></pre>
+    <p>Substitua <code>usuario</code>, <code>senha</code>, <code>localhost</code>, <code>5432</code> e <code>meubanco</code> com as suas configurações de banco de dados.</p>
+    
+    <h3>Execute as Migrações:</h3>
+    <pre><code>npx prisma migrate dev --name init
+    </code></pre>
+    
+    <h3>Inicie a Aplicação:</h3>
+    <pre><code>npm run start
+    </code></pre>
+    
 </ol>
 
 <h2>Testes</h2>
