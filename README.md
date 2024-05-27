@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>README - NestJS API com Prisma</title>
-</head>
+
 <body>
 <h1>NestJS API com Prisma</h1>
 
